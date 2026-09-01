@@ -1,0 +1,59 @@
+.card {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elev);
+  color: var(--chalk);
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+input {
+  background: var(--bg-elev2);
+  border: 1px solid var(--line);
+  color: var(--chalk);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 11px 12px;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+  flex: 0 0 140px;
+}
+
+.card h2 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  margin: 0 0 14px;
+}
+
+.entry-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.quick-add {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.quick-add-button {
+  flex: 1;
+  font-family: "IBM Plex Mono", monospace;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background: var(--bg-elev2);
+  color: var(--chalk-dim);
+}

@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top, rgba(232, 81, 31, 0.07), transparent 55%),
+    #171614;
+
+  --bg: #171614;
+  --bg-elev: #201f1c;
+  --bg-elev2: #282622;
+  --chalk: #f2ede4;
+  --chalk-dim: #a79e8e;
+  --chalk-faint: #6e675c;
+  --ember: #e8511f;
+  --ember-dim: rgba(232, 81, 31, 0.32);
+  --steel: #6c8998;
+  --success: #93a868;
+  --line: rgba(242, 237, 228, 0.12);
+  --line-soft: rgba(242, 237, 228, 0.06);
+
+  .btn {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 18px;
+    cursor: pointer;
+    background: var(--ember);
+    color: #171614;
+    white-space: nowrap;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--chalk);
+    outline-offset: 2px;
+  }
+}
