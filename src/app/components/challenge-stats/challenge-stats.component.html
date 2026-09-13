@@ -1,0 +1,31 @@
+<div class="stats">
+  <div class="stats-card">
+    <div class="stat-title"><H2>Status</H2></div>
+    <div class="stat-value">
+      Day {{ challengeStatData().challengeDayNumber }} / {{ challengeStatData().totalNumberOfDays }}
+    </div>
+  </div>
+  <div class="stats-card">
+    <div class="stat-title"><H2>Today</H2></div>
+    <div class="stat-value ember">
+      {{ challengeStatData().todayTotalRep }} reps
+    </div>
+  </div>
+  <div class="stats-card">
+    <div class="stat-title"><H2>Streak</H2></div>
+    <div class="stat-value steel">{{ challengeStatData().streak }} days</div>
+  </div>
+  <div class="stats-card">
+    <div class="stat-title"><H2>Need / Day</H2></div>
+    <div class="stat-value">{{ challengeStatData().needPerDay }}</div>
+  </div>
+
+  <div class="stats-card">
+    <div class="stat-title"><H2>Current Average</H2></div>
+    <div class="stat-value steel">{{ challengeStatData().currentAverage }} reps</div>
+  </div>
+  <div class="stats-card">
+    <div class="stat-title"><H2>Will reach</H2></div>
+    <div class="stat-value">{{ challengeStatData().projectedTotal }} reps</div>
+  </div>
+</div>

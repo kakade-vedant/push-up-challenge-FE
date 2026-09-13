@@ -1,0 +1,35 @@
+<div class="section-title">Recent entries</div>
+
+@if (groups().length === 0) {
+  <div class="empty">No reps logged yet. Add your first set above.</div>
+} @else {
+  @for (group of groups(); track $index) {
+    <div class="date-group">
+      <div class="date-header">
+        <span class="d">{{ group.dateLabel }}</span>
+        <span class="total">{{ group.total }} reps</span>
+      </div>
+      <ul class="log-list">
+        @for (entry of group.entries; track $index) {
+          <li>
+            <span class="r">{{ entry.count }} reps</span>
+            @if (!entryService.isOffline()) {
+              <button
+                class="del"
+                (click)="onDelete(entry, group)"
+                [attr.aria-label]="
+                  'Delete entry of ' +
+                  entry.count +
+                  ' reps on ' +
+                  group.dateLabel
+                "
+              >
+                x
+              </button>
+            }
+          </li>
+        }
+      </ul>
+    </div>
+  }
+}

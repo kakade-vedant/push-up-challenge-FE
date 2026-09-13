@@ -1,0 +1,16 @@
+<div class="section-title">Calendar</div>
+
+@for (month of months(); track $index) {
+  <div class="month-block">
+    <div class="month-label">{{ month.name }}</div>
+    <div class="grid">
+      <div
+        class="cell"
+        *ngFor="let day of month.days"
+        [class.future]="day.isFuture"
+        [attr.data-lvl]="day.lvl"
+        [title]="day.label + ': ' + day.count + ' reps'"
+      ></div>
+    </div>
+  </div>
+}

@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
@@ -5,6 +8,11 @@ body {
   background:
     radial-gradient(ellipse at top, rgba(232, 81, 31, 0.07), transparent 55%),
     #171614;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  font-family: "IBM Plex Sans";
 
   --bg: #171614;
   --bg-elev: #201f1c;
@@ -37,5 +45,14 @@ body {
   .btn:focus-visible {
     outline: 2px solid var(--chalk);
     outline-offset: 2px;
+  }
+
+  h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+    margin: 0 0 14px;
   }
 }

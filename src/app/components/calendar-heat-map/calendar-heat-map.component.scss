@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.section-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  margin: 0 0 12px;
+}
+
+.month-block {
+  margin-bottom: 14px;
+}
+
+.month-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--chalk-faint);
+  margin-bottom: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18px, 1fr));
+  gap: 4px;
+  width: 100%;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  background: transparent;
+
+  &[data-lvl="1"] { background: rgba(232, 81, 31, .28); border-color: transparent; }
+  &[data-lvl="2"] { background: rgba(232, 81, 31, .55); border-color: transparent; }
+  &[data-lvl="3"] { background: var(--ember); border-color: transparent; }
+
+  &.future {
+    border-style: dashed;
+    opacity: .35;
+  }
+}

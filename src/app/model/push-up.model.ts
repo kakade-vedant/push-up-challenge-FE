@@ -9,10 +9,18 @@ export interface GetAllEntriesLog{
     streak: number;
     todayTotalRep: number;
     needPerDay: number;
+    challengeDayNumber: number;
+    totalNumberOfDays: number;
+    currentAverage: number;
+    projectedTotal: number;
     entryLogList: GetEntryLog[];
 }
 
 export interface AddNewEntry {
     date?: Date;
     count: number;
+}
+
+export interface DeleteEntry {
+    id: string;
 }

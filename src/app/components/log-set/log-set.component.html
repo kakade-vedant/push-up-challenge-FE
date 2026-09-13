@@ -1,11 +1,16 @@
 <div class="card">
   <h2>LOG A SET</h2>
+  @if (entryService.isOffline()) {
+    <div class="offline-note">
+      Viewing cached progress — logging is disabled until the backend is back.
+    </div>
+  }
   <div class="entry-row">
     <input
       type="date"
       [formControl]="datePickerFormControl"
       min="2026-09-01"
-      max="2026-12-31"
+      [max]="formatDate(todayDate)"
     />
     <input
       type="number"
@@ -13,13 +18,14 @@
       placeholder="Reps"
       min="1"
       inputmode="numeric"
+      [formControl]="countFormControl"
     />
-    <button class="btn" id="addBtn">Add</button>
+    <button class="btn" id="addBtn" (click)="addReps()">Add</button>
   </div>
   <div class="quick-add">
-    <button class="quick-add-button" (click)="quickAddCount(10)"> +10 </button>
-    <button class="quick-add-button" (click)="quickAddCount(20)"> +20 </button>
-    <button class="quick-add-button" (click)="quickAddCount(50)"> +50 </button>
-    <button class="quick-add-button" (click)="quickAddCount(100)"> +100 </button>
+    <button class="quick-add-button" (click)="quickAddCount(10)">+10</button>
+    <button class="quick-add-button" (click)="quickAddCount(20)">+20</button>
+    <button class="quick-add-button" (click)="quickAddCount(50)">+50</button>
+    <button class="quick-add-button" (click)="quickAddCount(100)">+100</button>
   </div>
 </div>

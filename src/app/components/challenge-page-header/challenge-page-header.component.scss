@@ -1,0 +1,39 @@
+// challenge-page-header.component.scss
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ember);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+
+  .dates {
+    color: var(--chalk-faint);
+  }
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--steel);
+  border: 1px solid var(--steel);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .01em;
+  color: var(--chalk-dim);
+  margin: 0 0 28px;
+}

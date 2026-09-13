@@ -1,6 +1,5 @@
 .card {
-  width: max-content;
-  height: max-content;
+  width: 640px;
   display: flex;
   flex-direction: column;
   background: var(--bg-elev);
@@ -12,6 +11,7 @@
 }
 
 input {
+  width: 100%;
   background: var(--bg-elev2);
   border: 1px solid var(--line);
   color: var(--chalk);
@@ -56,4 +56,19 @@ input[type="date"] {
   cursor: pointer;
   background: var(--bg-elev2);
   color: var(--chalk-dim);
+}
+
+.quick-add-button:hover {
+  border-color: var(--ember);
+  color: var(--chalk);
+}
+.quick-add-button:focus-visible {
+  outline: 2px solid var(--ember);
+}
+
+.offline-note {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--ember);
+  margin-bottom: 12px;
 }

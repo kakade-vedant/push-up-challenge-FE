@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EntryService } from '../../service/entry.service';
 
@@ -12,15 +12,38 @@ export class LogSetComponent {
   todayDate: Date = new Date();
 
   datePickerFormControl: FormControl;
-  constructor(private entryService: EntryService) {
+  countFormControl: FormControl;
+
+  constructor(protected entryService: EntryService) {
+    effect(() => {
+      if (this.entryService.isOffline()) {
+        this.datePickerFormControl.disable();
+        this.countFormControl.disable();
+      } else {
+        this.datePickerFormControl.enable();
+        this.countFormControl.enable();
+      }
+    });
+
     this.datePickerFormControl = new FormControl({
       value: this.formatDate(this.todayDate),
       disabled: false,
+    });
 
+    this.countFormControl = new FormControl({
+      value: null,
+      disabled: false,
     });
   }
 
-  private formatDate(date: Date): string {
+  public addReps(count: number | null = null, date: Date | null = null): void {
+    this.entryService.createEntry({
+      count: count ?? this.countFormControl.value,
+      date: date ?? this.datePickerFormControl.value,
+    });
+  }
+
+  public formatDate(date: Date): string {
     const y = date.getFullYear();
     const m = String(date.getMonth() + 1).padStart(2, '0');
     const d = String(date.getDate()).padStart(2, '0');
@@ -28,7 +51,6 @@ export class LogSetComponent {
   }
 
   public quickAddCount(count: number): void {
-    this.entryService.createEntry({count, date: this.todayDate});
+    this.addReps(count, this.todayDate);
   }
-
 }
